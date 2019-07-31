@@ -90,7 +90,7 @@ export default {
                 }
             }
             if(n==2 || n==3 || n==4){
-                var session=sessionStorage.getItem("session")
+                var session=localStorage.getItem("session")
                 if(!session){
                     this.$router.push("/login")
             }

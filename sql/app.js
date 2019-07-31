@@ -108,8 +108,9 @@ server.get("/cart",(req,res)=>{
 //接口测试：http://127.0.0.1:3000/delAll?ids=6,7   多个id参数用逗号隔开
 server.get("/delAll",(req,res)=>{
   var ids=req.query.ids;
-  var sql=`DELETE FROM gs_chart WHERE id IN (${ids})`;
+  var sql=`DELETE FROM gs_chart WHERE cid IN (${ids})`;
   pool.query(sql,(err,result)=>{
+    console.log(result)
     if (err) throw err;
     if(result.affectedRows>0){
       res.send({code:1,msg:"删除成功"})

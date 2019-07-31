@@ -35,7 +35,7 @@
         </li>
         <li>全选</li>
         <li class="all">总价:</li>
-        <li class="price">￥{{sum}}</li>
+        <li class="price">￥{{total}}</li>
         <li style="color:#aaa;font-size:13px">不含运费</li>
         <li class="btn" @click="delAll">{{btn}}</li>
     </ul>
@@ -100,7 +100,7 @@ export default {
             txt:"编辑",
             list:[],
             btn:"立即购买",
-            select:[require("../../img/shop/unselect.png"),require("../../img/shop/unselect.png"),require("../../img/shop/unselect.png")],
+            select:[],
             select1:require("../../img/shop/unselect.png"),
             sum:0
         }
@@ -109,10 +109,16 @@ export default {
         change(i){    
             if(this.select[i]==require("../../img/shop/unselect.png")){
                 this.select.splice(i,1,require("../../img/shop/select.png"))
-                this.sum+=this.list[i].price*this.list[i].count
             }else{
                 this.select.splice(i,1,require("../../img/shop/unselect.png"))
-                this.sum-=this.list[i].price*this.list[i].count
+            }
+            var t =this.select.every(function(elem,i,arr){
+                return elem == require("../../img/shop/select.png")
+            })
+            if(t){
+               this.select1 =require("../../img/shop/select.png")
+            }else{
+                this.select1 =require("../../img/shop/unselect.png")
             }
             },
         loadMore(){
@@ -144,29 +150,34 @@ export default {
             }
         },
         selectAll(){
+            
             if(this.select1==require("../../img/shop/unselect.png")){
-                this.select=[require("../../img/shop/select.png"),require("../../img/shop/select.png"),require("../../img/shop/select.png")]
-                this.select1=require("../../img/shop/select.png")
-                this.sum=0;
-                for(var item of this.list){
-                    this.sum+=item.price*item.count;
+                for(var i=0;i<this.select.length;i++){
+                    this.select[i]=require("../../img/shop/select.png")
                 }
+                this.select1=require("../../img/shop/select.png")
+                // this.sum=0;
+                // for(var item of this.list){
+                //     this.sum+=item.price*item.count;
+                // }
             }else{
                 this.select1=require("../../img/shop/unselect.png")
-                this.select=[require("../../img/shop/unselect.png"),require("../../img/shop/unselect.png"),require("../../img/shop/unselect.png")]
-                this.sum=0
+                for(var i=0;i<this.select.length;i++){
+                    this.select[i]=require("../../img/shop/unselect.png")
+                }
+                // this.sum=0
             }
             
         },
         add(i){
-            var count1=this.list[i].count;
-            var count2=this.list[i].count+1;
-            this.sum+=this.list[i].price*(count2-count1)
-            this.list[i].count=count2
+            // var count1=this.list[i].count;
+            // var count2=this.list[i].count+1;
+            // this.sum+=this.list[i].price*(count2-count1)
+            this.list[i].count++
             this.select.splice(i,1,require("../../img/shop/select.png"))
         },
         down(i){
-            if(this.list[i].count>0){
+            if(this.list[i].count>1){
                 this.list[i].count--
                 this.select.splice(i,1,require("../../img/shop/select.png"))
                 
@@ -179,12 +190,13 @@ export default {
                     if(this.select[i]==require("../../img/shop/select.png")){
                         var id=this.list[i].cid;
                         str+=id+","
-                        
-                    }else if(str.length==0){
-                    this.$toast("请选择商品");
-                    return;
                     }
                 }
+                console.log(str)
+                if(str==""){
+                    this.$toast("请选择商品");
+                    return;
+                }else{
                 str=str.substring(0,str.length-1)
                 console.log(str);
                 //发送ajax请求
@@ -192,7 +204,8 @@ export default {
                 var obj={ids:str};
                 this.$messagebox.confirm('是否确认删除此商品').then(action=>{
                     this.axios.get(url,{params:obj}).then(result=>{
-                        if(result.code==1){
+                        console.log(result)
+                        if(result.data.code==1){
                             this.loadMore();
                         }else{
                             this.$toast("删除失败")
@@ -203,13 +216,26 @@ export default {
                 });
             }
         }
+        }
     },
     created(){
         this.loadMore();
     },
     mounted(){
-        // var imgs=document.getElementsByClassName("icon");
-        console.log(this.$refs.box)
+    },
+    computed:{
+        total(){
+            var sum=0;
+            for(var i=0;i<this.list.length;i++){
+                if(this.select[i]==require("../../img/shop/select.png")){
+                        sum+=this.list[i].price*this.list[i].count
+                }
+            }
+            if(!this.select1 ==require("../../img/shop/select.png")){
+                sum= 0
+            }
+            return sum;
+        }
     }
 }
 </script>
@@ -253,7 +279,7 @@ export default {
         border-radius: .16rem;
     }
 .btn{
-    width: 25%;
+    width: 22%;
     background:#ae2121;
     height: 35px;
     line-height: 35px;
@@ -267,7 +293,9 @@ export default {
     font-weight: bold;
     color:#ae2121;
     font-size: 16px;
-    margin-right: 15px;
+    /* margin-right: 15px; */
+    width: 18%;
+    text-align: left
 }
 .all{
     margin-left: 20px

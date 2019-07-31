@@ -95,7 +95,7 @@ export default {
                             console.log(res);
                             if(res.data.code>0){
                             this.$toast('登录成功')
-                            sessionStorage.setItem("session",res.uid);
+                            localStorage.setItem("session",res.uid);
                             this.$router.push("/gs")
                         }else{
                             this.$messagebox('提示','用户名或密码错误')

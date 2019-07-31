@@ -7,6 +7,7 @@ import axios from "./axios"
 import MintUI from 'mint-ui'
 //2.单引引入mint-ui样式
 import Vant from 'vant';
+import BScroll from 'better-scroll';
 import 'vant/lib/index.css';
 import 'mint-ui/lib/style.css'
 import { Search } from 'mint-ui';
