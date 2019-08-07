@@ -19,6 +19,8 @@ import vueSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css' 
 
 
+import { Loading } from 'vant';
+Vue.use(Loading);
 Vue.use(IndexBar).use(IndexAnchor);
 Vue.use(vueSwiper)
 Vue.component(Search.name, Search);

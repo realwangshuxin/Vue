@@ -5,9 +5,11 @@ import login from './components/login.vue'
 import a from './components/a.vue'
 import pro1 from './components/pro1.vue'
 import pro2 from './components/pro2.vue'
+import jiu from './components/jiu.vue'
 import wuliu from './components/common/wuliu.vue'
 import chart from './components/common/chart.vue'
 import search from './components/common/search.vue'
+import mine from './components/common/mine.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -17,8 +19,16 @@ export default new Router({
       component: gs
     },
     {
+      path: '/mine',
+      component: mine
+    },
+    {
       path: '/a',
       component: a
+    },
+    {
+      path: '/jiu',
+      component: jiu
     },
     {
       path: '/pro1',

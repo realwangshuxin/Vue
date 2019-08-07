@@ -66,7 +66,7 @@ export default {
            
         },
         quexiao(){
-            this.$router.push("/gs")
+            this.$router.push("/")
         },
         del(){
             if(this.cb){

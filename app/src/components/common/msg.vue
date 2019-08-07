@@ -56,7 +56,7 @@ export default {
     color: #fff;
     line-height: 15px;
     position: absolute;
-    top: 3rem;
+    top: 3.7rem;
     left: 1.9rem
 }
 *{

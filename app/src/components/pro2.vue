@@ -75,7 +75,17 @@
             </div>
 
         </div>
-
+        <ul class="dhl">
+          <li>
+              <img src="../img/top.png" alt="" class="dh"  @click="totop">
+          </li>
+          <li>
+               <img src="../img/sousuo.png" alt="" class="dh" @click="tosearch">
+          </li>
+          <li>
+               <img src="../img/shouye.png" alt="" class="dh" @click="toshouye">
+          </li>
+      </ul>
 
     </div>
 </template>
@@ -92,6 +102,15 @@ export default {
         }
     },
     methods: {
+        tosearch(){
+            this.$router.push("/search")
+        },
+        toshouye(){
+            this.$router.push("/")
+        },
+        totop(){
+            document.documentElement.scrollTop = document.body.scrollTop = 0;
+        },
         up(){
             this.value++
         },
@@ -219,8 +238,8 @@ ul{
 }
 ul li{
     width: 100%;
-    background: #fff;
-    border-bottom: 1px solid #ccc;
+    /* background: #fff;
+    border-bottom: 1px solid #ccc; */
     padding-left: 20px;
     height: 40px;
     display: flex;
@@ -321,6 +340,23 @@ ul li img{
     color: #fff;
     height: 50px;
     margin-top:230px
+}
+.dhl{
+    position:fixed;
+    top: 50%;
+    left: 75%;
+    z-index: 1000;
+    border:0 !important;
+    background: transparent !important
+}
+.dhl li{
+    margin-top: 10px
+}
+.dhl li .dh{
+    width: 40px;height: 40px !important;
+    margin-top: 10px !important;
+    border:0 !important;
+    background-color: transparent !important
 }
 </style>
 

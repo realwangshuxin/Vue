@@ -238,6 +238,17 @@
                 </div>
             </div>
         </div>
+        <ul class="dhl">
+          <li>
+              <img src="../../img/top.png" alt="" class="dh" v-show="top" @click="totop">
+          </li>
+          <li>
+               <img src="../../img/sousuo.png" alt="" class="dh" @click="tosearch">
+          </li>
+          <li>
+               <img src="../../img/shouye.png" alt="" class="dh" @click="toshouye">
+          </li>
+      </ul>
         <br><br><br>
     </div>
 </template>
@@ -270,7 +281,8 @@ export default {
             clickable: true
           }
         },
-        list:[]
+        list:[],
+        top:true
         }
     },
     props:{
@@ -280,6 +292,15 @@ export default {
         this.loadMore();
     },
     methods:{
+         tosearch(){
+            this.$router.push("/search")
+        },
+        toshouye(){
+            this.$router.push("/")
+        },
+        totop(){
+            document.documentElement.scrollTop = document.body.scrollTop = 0;
+        },
         loadMore(){
             this.axios.get("pro").then(result=>{
                 console.log(result);
@@ -300,6 +321,16 @@ export default {
 }
 </script>
 <style scoped>
+.dhl{
+    position:fixed;
+    top: 50%;
+    right: 6%;
+    z-index: 1000
+}
+.dh{
+    width: 40px;height: 40px;
+    margin-top: 10px
+}
     .prod{
         width: 100%;
         overflow: hidden;

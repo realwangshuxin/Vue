@@ -67,3 +67,50 @@ CREATE TABLE gs_chart(
   size VARCHAR(36)
 );
 INSERT INTO gs_chart VALUES(2,null,"img/3.jpg",'[公路独家]三大殿堂级电子烟品牌，一次性小烟sqrd',35,12,'')
+
+CREATE TABLE gs_jiu(
+  jid INT PRIMARY KEY AUTO_INCREMENT,
+  j_img VARCHAR(360),
+  j_title VARCHAR(32),
+  j_price VARCHAR(32)
+);
+INSERT INTO gs_jiu VALUES(null,'img/jiu/1.jpg','【临期特价】来自澳洲的百年姜汁汽水|Angus o','85~165');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/2.jpg','世界上第一款桃子味的可乐','19~114');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/3.jpg','喝下樱花可乐满满都是少女心','24');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/4.jpg','一口干掉的日本160毫升迷你可乐是最小的可乐','15~55');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/5.jpg','李茶德挂耳茶系列九曲红梅茶叶，2018新茶红茶包','39~100');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/6.jpg','让你在DJ台前充满精力跳动的Mate Mate马黛茶|碳酸饮料 6瓶装','76~152');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/7.jpg','来自瑞典的液体燕麦，低脂肪、高纤维健康饮品|oatly燕麦奶','24~112');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/8.jpg','这就是一杯能喝七八年的饮料 一千个人喝有一千种味道','26~135');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/9.jpg','1966 年科幻小说描绘的“未来食物”成为了现实|Soylent 代餐饮品','85~95');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/10.jpg','澳洲四星庄Hesketh小仙女莫斯卡托甜白起泡酒葡萄酒','119');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/11.jpg','如同蓝天，拥有海盐味道的齐藤蓝色可乐','99~110');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/12.jpg','【预售】传说二战时期苏联领导人专供，时隔26年的透明可口可乐再次正式发售','138~200');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/13.jpg','咖啡味的可口可乐，香气与气泡的完美结合|Coca-Cola Plus Coffee','16~290');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/14.jpg','自带派对野餐气质的西西里柠檬“小香槟”|LOKALES柠檬气泡酒 六支装','1325');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/15.jpg','日本春季限定Gokuri飘逸果肉水蜜桃汁','213~1110');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/16.jpg','【临期特价】来自澳洲的百年姜汁汽水|Angus o','85~165');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/17.jpg','世界上第一款桃子味的可乐','19~114');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/18.jpg','喝下樱花可乐满满都是少女心','24');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/19.jpg','一口干掉的日本160毫升迷你可乐是最小的可乐','15~55');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/20.jpg','李茶德挂耳茶系列九曲红梅茶叶，2018新茶红茶包','39~100');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/21.jpg','让你在DJ台前充满精力跳动的Mate Mate马黛茶|碳酸饮料 6瓶装','76~152');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/22.jpg','来自瑞典的液体燕麦，低脂肪、高纤维健康饮品|oatly燕麦奶','24~112');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/23.jpg','这就是一杯能喝七八年的饮料 一千个人喝有一千种味道','26~135');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/24.jpg','1966 年科幻小说描绘的“未来食物”成为了现实|Soylent 代餐饮品','85~95');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/25.jpg','澳洲四星庄Hesketh小仙女莫斯卡托甜白起泡酒葡萄酒','119');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/27.jpg','如同蓝天，拥有海盐味道的齐藤蓝色可乐','99~110');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/28.jpg','【预售】传说二战时期苏联领导人专供，时隔26年的透明可口可乐再次正式发售','138~200');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/29.jpg','咖啡味的可口可乐，香气与气泡的完美结合|Coca-Cola Plus Coffee','16~290');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/30.jpg','自带派对野餐气质的西西里柠檬“小香槟”|LOKALES柠檬气泡酒 六支装','1325');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/7.jpg','来自瑞典的液体燕麦，低脂肪、高纤维健康饮品|oatly燕麦奶','24~112');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/8.jpg','这就是一杯能喝七八年的饮料 一千个人喝有一千种味道','26~135');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/9.jpg','1966 年科幻小说描绘的“未来食物”成为了现实|Soylent 代餐饮品','85~95');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/10.jpg','澳洲四星庄Hesketh小仙女莫斯卡托甜白起泡酒葡萄酒','119');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/11.jpg','如同蓝天，拥有海盐味道的齐藤蓝色可乐','99~110');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/12.jpg','【预售】传说二战时期苏联领导人专供，时隔26年的透明可口可乐再次正式发售','138~200');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/13.jpg','咖啡味的可口可乐，香气与气泡的完美结合|Coca-Cola Plus Coffee','16~290');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/14.jpg','自带派对野餐气质的西西里柠檬“小香槟”|LOKALES柠檬气泡酒 六支装','1325');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/15.jpg','日本春季限定Gokuri飘逸果肉水蜜桃汁','213~1110');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/16.jpg','【临期特价】来自澳洲的百年姜汁汽水|Angus o','85~165');
+INSERT INTO gs_jiu VALUES(null,'img/jiu/17.jpg','世界上第一款桃子味的可乐','19~114');

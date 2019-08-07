@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div class="pro_parent">
-                <div class="pro" style="margin-bottom:10px">
+                <div class="pro" style="margin-bottom:10px" @click="lingshi">
                     <img src="../../img/chihe/1_1.png" alt="" class="pro_img">
                     <p>零食</p>
                 </div>
@@ -38,6 +38,11 @@
 export default {
     data(){
         return {}
+    },
+    methods:{
+        lingshi(){
+            this.$router.push("/jiu")
+        }
     }
 }
 </script>
